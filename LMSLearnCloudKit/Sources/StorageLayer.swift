@@ -197,21 +197,15 @@ class StorageLayer {
 
 extension StorageLayer {
     func setUpCloudIfNeeded() {
-        let group = DispatchGroup()
-
         if !zoneCreatedAndSubscribed {
-            createZoneThenSubscribe(in: group)
-        }
-
-        group.notify(queue: .global()) { [weak self] in
-            guard let self = self else { return }
-            if self.zoneCreatedAndSubscribed {
-                self.fetchChanges()
-            }
+            createZoneThenSubscribe()
+        } else {
+            self.fetchChanges()
         }
     }
 
-    func createZoneThenSubscribe(in group: DispatchGroup) {
+    func createZoneThenSubscribe() {
+        let group = DispatchGroup()
         group.enter()
 
         let customZone = CKRecordZone(zoneID: Self.zoneID)
