@@ -3,21 +3,22 @@ import CloudKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var appModel: AppModel!
+    var storageLayer: StorageLayer!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         application.registerForRemoteNotifications()
-        appModel = AppModel()
-        appModel.setUpCloudKit()
+        storageLayer = StorageLayer()
+        storageLayer.setUpCloudIfNeeded()
         return true
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let notification: CKRecordZoneNotification = CKNotification(fromRemoteNotificationDictionary: userInfo) as? CKRecordZoneNotification,
            notification.databaseScope == .private,
-           notification.recordZoneID?.zoneName == AppModel.zoneID.zoneName {
-            appModel.fetchChanges {
+           notification.recordZoneID?.zoneName == StorageLayer
+            .zoneID.zoneName {
+            storageLayer.fetchChanges {
                 completionHandler(.newData)
             }
         }

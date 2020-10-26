@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9ABFECA82546853B0068EBC7 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFECA72546853B0068EBC7 /* ListModel.swift */; };
+		9ABFECAB2546ADC50068EBC7 /* ListCRDT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFECAA2546ADC50068EBC7 /* ListCRDT.swift */; };
+		9ABFECAE2546ADFA0068EBC7 /* StorageLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABFECAD2546ADFA0068EBC7 /* StorageLayer.swift */; };
 		9AE890822541478500E28A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE890812541478500E28A0F /* AppDelegate.swift */; };
 		9AE890842541478500E28A0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE890832541478500E28A0F /* SceneDelegate.swift */; };
 		9AE890862541478500E28A0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE890852541478500E28A0F /* ContentView.swift */; };
 		9AE890882541478700E28A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE890872541478700E28A0F /* Assets.xcassets */; };
 		9AE8908E2541478700E28A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE8908C2541478700E28A0F /* LaunchScreen.storyboard */; };
 		9AE890B7254149AE00E28A0F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE890B6254149AE00E28A0F /* CloudKit.framework */; };
-		9AE890BC2541538A00E28A0F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE890BB2541538A00E28A0F /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9ABFECA72546853B0068EBC7 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		9ABFECAA2546ADC50068EBC7 /* ListCRDT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCRDT.swift; sourceTree = "<group>"; };
+		9ABFECAD2546ADFA0068EBC7 /* StorageLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLayer.swift; sourceTree = "<group>"; };
 		9AE8907E2541478500E28A0F /* LMSLearnCloudKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMSLearnCloudKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE890812541478500E28A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE890832541478500E28A0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +31,6 @@
 		9AE8908F2541478700E28A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE890B4254149AB00E28A0F /* LMSLearnCloudKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMSLearnCloudKit.entitlements; sourceTree = "<group>"; };
 		9AE890B6254149AE00E28A0F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		9AE890BB2541538A00E28A0F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9ABFECA62546852E0068EBC7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9ABFECA72546853B0068EBC7 /* ListModel.swift */,
+				9ABFECAA2546ADC50068EBC7 /* ListCRDT.swift */,
+				9ABFECAD2546ADFA0068EBC7 /* StorageLayer.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		9AE890752541478500E28A0F = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +75,7 @@
 		9AE890802541478500E28A0F /* LMSLearnCloudKit */ = {
 			isa = PBXGroup;
 			children = (
+				9ABFECA62546852E0068EBC7 /* Sources */,
 				9AE890B4254149AB00E28A0F /* LMSLearnCloudKit.entitlements */,
 				9AE890812541478500E28A0F /* AppDelegate.swift */,
 				9AE890832541478500E28A0F /* SceneDelegate.swift */,
@@ -68,7 +83,6 @@
 				9AE890872541478700E28A0F /* Assets.xcassets */,
 				9AE8908C2541478700E28A0F /* LaunchScreen.storyboard */,
 				9AE8908F2541478700E28A0F /* Info.plist */,
-				9AE890BB2541538A00E28A0F /* Model.swift */,
 			);
 			path = LMSLearnCloudKit;
 			sourceTree = "<group>";
@@ -153,7 +167,9 @@
 				9AE890822541478500E28A0F /* AppDelegate.swift in Sources */,
 				9AE890842541478500E28A0F /* SceneDelegate.swift in Sources */,
 				9AE890862541478500E28A0F /* ContentView.swift in Sources */,
-				9AE890BC2541538A00E28A0F /* Model.swift in Sources */,
+				9ABFECAE2546ADFA0068EBC7 /* StorageLayer.swift in Sources */,
+				9ABFECAB2546ADC50068EBC7 /* ListCRDT.swift in Sources */,
+				9ABFECA82546853B0068EBC7 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

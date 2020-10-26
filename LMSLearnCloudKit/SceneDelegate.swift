@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(appDelegate.appModel))
+            let listModel = ListModel(storageLayer: appDelegate.storageLayer)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(listModel))
             self.window = window
             window.makeKeyAndVisible()
         }
